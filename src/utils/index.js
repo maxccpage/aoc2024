@@ -22,3 +22,28 @@
  *     import myLib from '../utils/myLib'
  *     import { myUtil } from '../utils'
  */
+import fs from "fs"
+
+export const getFileContents = (filePath) => {
+  try {
+    const fileContents = fs.readFileSync(
+      `${process.cwd()}/${filePath}`,
+      "utf-8",
+    )
+    return fileContents
+  } catch (error) {
+    throw new Error(`Failed to read file: ${error.message}`)
+  }
+}
+
+export const inputIterator = (rawInput, delimiter = null) => {
+  const input = rawInput.split(delimiter || "\n")
+
+  return (mapper) => {
+    input.forEach((line, index) => {
+      if (line) {
+        mapper(line, index)
+      }
+    })
+  }
+}

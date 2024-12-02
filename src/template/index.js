@@ -1,15 +1,18 @@
 import run from "aocrunner"
-
-const parseInput = (rawInput) => rawInput
+import { inputIterator, getFileContents } from "../utils/index.js"
 
 const part1 = (rawInput) => {
-  const input = parseInput(rawInput)
+  inputIterator(rawInput)((line, index) => {
+    // Code here
+  })
 
   return
 }
 
 const part2 = (rawInput) => {
-  const input = parseInput(rawInput)
+  inputIterator(rawInput)((line, index) => {
+    // Code here
+  })
 
   return
 }
@@ -18,7 +21,7 @@ run({
   part1: {
     tests: [
       // {
-      //   input: ``,
+      //   input: getFileContents('src/day[INSERT_DAY]/test.txt'),
       //   expected: "",
       // },
     ],
@@ -27,12 +30,12 @@ run({
   part2: {
     tests: [
       // {
-      //   input: ``,
+      //   input: getFileContents('src/day[INSERT_DAY]/test.txt'),
       //   expected: "",
       // },
     ],
     solution: part2,
   },
   trimTestInputs: true,
-  onlyTests: false,
+  onlyTests: true,
 })
