@@ -36,8 +36,8 @@ export const getFileContents = (filePath) => {
   }
 }
 
-export const inputIterator = (rawInput, delimiter = null) => {
-  const input = rawInput.split(delimiter || "\n")
+export const inputIterator = (rawInput, options = {}) => {
+  const input = rawInput.split(options.file_delimiter || "\n")
 
   return (mapper) => {
     input.forEach((line, index) => {
